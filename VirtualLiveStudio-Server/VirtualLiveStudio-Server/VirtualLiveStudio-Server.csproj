@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>VirtualLiveStudio</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MagicOnion" Version="3.0.13" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Compile Include="..\..\VirtualLiveStudio-Client\Assets\VirtualLiveStudio-ClientSDK\Interface\*.cs" LinkBase="CommonFromUnity" />
+  </ItemGroup>
+
+</Project>
