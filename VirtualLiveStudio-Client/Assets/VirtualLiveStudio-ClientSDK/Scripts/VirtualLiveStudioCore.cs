@@ -17,20 +17,24 @@ namespace VirtualLiveStudio
         private int connectionPort = 20201;
 
 
-        private Channel grpcChannel;
+        public static Channel GrpcChannel;
 
         public static ITestService TestService;
 
         private void Awake()
         {
-            grpcChannel = new Channel(connectionTarget, connectionPort, ChannelCredentials.Insecure);
+            if (GrpcChannel == null)
+            {
+                GrpcChannel = new Channel(connectionTarget, connectionPort, ChannelCredentials.Insecure);
 
-            TestService = MagicOnionClient.Create<ITestService>(grpcChannel);
+                TestService = MagicOnionClient.Create<ITestService>(GrpcChannel);
+            }
         }
 
         private async void OnDestroy()
         {
-            await grpcChannel.ShutdownAsync();
+            await GrpcChannel.ShutdownAsync();
+            GrpcChannel = null;
         }
     }
 }
