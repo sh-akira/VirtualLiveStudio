@@ -18,11 +18,11 @@ public class Chat : MonoBehaviour
 
     private async void OnDestroy() => await chatHub.DisposeAsync();
 
-    private void ChatHub_OnJoin(string name) => messagelog += $"Join [{name}]";
+    private void ChatHub_OnJoin(string name) => messagelog += $"Join [{name}]\n";
 
-    private void ChatHub_OnLeave(string name) => messagelog += $"Leave [{name}]";
+    private void ChatHub_OnLeave(string name) => messagelog += $"Leave [{name}]\n";
 
-    private void ChatHub_OnSendMessage(ChatMessageResponse message) => messagelog += $"{message.UserName} : {message.Message}";
+    private void ChatHub_OnSendMessage(ChatMessageResponse message) => messagelog += $"{message.UserName} : {message.Message}\n";
 
 
     private string roomName = "Room Name";
