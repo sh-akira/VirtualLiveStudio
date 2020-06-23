@@ -1,29 +1,33 @@
 ﻿using Grpc.Core;
+using MagicOnion.Hosting;
 using MagicOnion.Server;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using System;
+using System.Threading.Tasks;
 
 namespace VirtualLiveStudio
 {
     class Program
     {
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
-            GrpcEnvironment.SetLogger(new Grpc.Core.Logging.ConsoleLogger());
-
-            // setup MagicOnion and option.
-            var service = MagicOnionEngine.BuildServerServiceDefinition(isReturnExceptionStackTraceInErrorDetail: true);
-
-            var server = new global::Grpc.Core.Server
-            {
-                Services = { service },
-                Ports = { new ServerPort("localhost", 20201, ServerCredentials.Insecure) }
-            };
-
-            // launch gRPC Server.
-            server.Start();
-
-            // and wait.
-            Console.ReadLine();
+            await MagicOnionHost.CreateDefaultBuilder()
+                .UseMagicOnion()
+                .ConfigureServices((hostContext, services) =>
+                {
+                    services.Configure<MagicOnionHostingOptions>(options =>
+                    {
+                        options.ServerPorts = new[] { 
+                            new MagicOnionHostingServerPortOptions { 
+                                Host = "localhost", 
+                                Port = 20201, 
+                                UseInsecureConnection = true 
+                            }
+                        };
+                    });
+                })
+                .RunConsoleAsync();
         }
     }
 }
