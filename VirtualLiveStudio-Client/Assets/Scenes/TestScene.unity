@@ -222,7 +222,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 891753180}
-  - component: {fileID: 891753179}
   - component: {fileID: 891753178}
   m_Layer: 0
   m_Name: TestService
@@ -243,20 +242,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ec8706650c4c394496b80d22105186d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  testService: {fileID: 891753179}
---- !u!114 &891753179
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 891753177}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df06c41c8773b2d46be00e3b6bc09ee8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: TestName
 --- !u!4 &891753180
 Transform:
   m_ObjectHideFlags: 0

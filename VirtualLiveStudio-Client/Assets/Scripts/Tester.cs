@@ -5,8 +5,7 @@ using VirtualLiveStudio;
 
 public class Tester : MonoBehaviour
 {
-    [SerializeField]
-    private TestService testService;
+    private TestService testService = new TestService();
 
     private void OnGUI()
     {
