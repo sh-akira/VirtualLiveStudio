@@ -12,7 +12,7 @@
   </ItemGroup>
   
   <ItemGroup>
-    <Compile Include="..\..\VirtualLiveStudio-Client\Assets\VirtualLiveStudio-ClientSDK\Interface\*.cs" LinkBase="CommonFromUnity" />
+    <Compile Include="..\..\VirtualLiveStudio-Client\Assets\VirtualLiveStudio-ClientSDK\ServerShared\**\*.cs" LinkBase="SharedFromUnity" />
   </ItemGroup>
 
 </Project>

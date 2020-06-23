@@ -1,7 +1,7 @@
 ﻿using MagicOnion;
 using System.Threading.Tasks;
 
-namespace VirtualLiveStudio.Interfaces
+namespace VirtualLiveStudio.Shared.Services
 {
     // define interface as Server/Client IDL.
     // implements T : IService<T> and share this type between server and client.

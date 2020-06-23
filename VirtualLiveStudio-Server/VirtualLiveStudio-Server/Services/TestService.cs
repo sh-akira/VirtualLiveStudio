@@ -2,7 +2,7 @@
 using MagicOnion;
 using MagicOnion.Server;
 using System.Threading.Tasks;
-using VirtualLiveStudio.Interfaces;
+using VirtualLiveStudio.Shared.Services;
 
 namespace VirtualLiveStudio.Services
 {

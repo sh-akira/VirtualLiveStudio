@@ -3,7 +3,7 @@ using MagicOnion.Client;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using VirtualLiveStudio.Interfaces;
+using VirtualLiveStudio.Shared.Services;
 
 namespace VirtualLiveStudio
 {
